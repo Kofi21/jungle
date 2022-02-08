@@ -97,11 +97,6 @@ ActiveRecord::Schema.define(version: 20220206184418) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "widgets", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "name",    limit: 255, null: false
-  end
-
   add_foreign_key "comments", "resources", name: "comments_resource_id_fkey", on_delete: :cascade
   add_foreign_key "likes", "resources", name: "likes_resource_id_fkey", on_delete: :cascade
   add_foreign_key "line_items", "orders"
